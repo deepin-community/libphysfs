@@ -1,0 +1,458 @@
+libphysfs (3.0.2-5) UNRELEASED; urgency=medium
+
+  * update
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Thu, 19 May 2022 10:23:15 +0800
+
+libphysfs (3.0.2-5) unstable; urgency=medium
+
+  * Adjust lintian overrides.
+  * Bump Standards-Version to 4.5.1.
+  * Bump debhelper-compat to level 13.
+  * Update debian/watch file standard to version 4.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Thu, 19 Nov 2020 14:58:29 +0100
+
+libphysfs (3.0.2-4) unstable; urgency=medium
+
+  * Bump Standards-Version to 4.5.0.
+  * Use the new debhelper-compat notation, and drop the d/compat file.
+  * Adjust source lintian-overrides.
+  * Set Rules-Requires-Root: no.
+  * Add physfs.pc file.
+    Closes: #935441
+  * Set fixfilepath for reproducible builds.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Thu, 23 Jan 2020 16:32:59 +0100
+
+libphysfs (3.0.2-3) unstable; urgency=medium
+
+  * Make a new source only upload.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Tue, 23 Jul 2019 11:42:52 +0200
+
+libphysfs (3.0.2-2) unstable; urgency=medium
+
+  * Bump Standards-Version to 4.4.0.
+  * Uploading to unstable.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Mon, 08 Jul 2019 15:25:16 +0200
+
+libphysfs (3.0.2-1) experimental; urgency=medium
+
+  * New upstream release.
+    - Remove merged patch 01-setwritedir.
+    - Remvoe merged patch 02-fsync.
+  * Acknowledge 3.0.1-3.1 NMU.
+  * Bump Standards-Version to 4.3.0.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Fri, 28 Dec 2018 10:25:32 +0100
+
+libphysfs (3.0.1-3.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix the fsync patch. Really closes: #907429.
+
+ -- Stephen Kitt <skitt@debian.org>  Sat, 01 Dec 2018 15:27:09 +0100
+
+libphysfs (3.0.1-3) unstable; urgency=medium
+
+  * Bump Standards-Version to 4.2.1.
+  * Merge 3.0.1-2~bpo9+1 changelog.
+  * Fix renamed debian-watch lintian tag.
+  * Add upstream patch 02-fsync.
+    Closes: #907429
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Thu, 29 Nov 2018 15:10:13 +0100
+
+libphysfs (3.0.1-2~bpo9+1) stretch-backports; urgency=medium
+
+  * Rebuild for stretch-backports.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Mon, 22 Oct 2018 10:50:42 +0200
+
+libphysfs (3.0.1-2) unstable; urgency=high
+
+  * Move package to my own repository.
+  * Bump Standards-Version to 4.1.4.
+  * Move source.lintian-overrides file to source directory.
+  * Add upstream patch 01-setwritedir to fix a bug in the setWriteDir function.
+    Much thanks Gianfranco Costamagna for taking care of this.
+    Closes: #898483
+  * Bump debian/compat to level 11.
+  * Adjust lintian overrides.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Tue, 05 Jun 2018 14:28:17 +0200
+
+libphysfs (3.0.1-1) unstable; urgency=medium
+
+  * New upstream release.
+    - Remove merged or not anymore required patches
+      01-do-not-link-against-curses, 02-zip-seek and 03-set-project-number.
+  * Bump Standards-Version to 4.1.1 (no changes required).
+  * Use secure URI for homepage and debian/watch.
+  * Remove trailing whitespace from debian/changelog.
+  * Adjust lintian overrides.
+  * doc base has been removed.
+  * Removed doxygen.
+  * Various docs has been removed.
+  * Remove now missing manpages and doc files.
+  * jquery is no longer a part of this package.
+  * Adjust debian/copyright.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Tue, 07 Nov 2017 10:37:53 +0100
+
+libphysfs (2.0.3-6) unstable; urgency=medium
+
+  * Bump Standards-Version to 4.0.0 (no changes required).
+  * Drop dbg package.
+  * Bump debian/compat to level 10.
+    - Drop build dependency on autotools-dev.
+  * Add patch 03-set-project-number to set the project number in the Doxyfile.
+    Closes: #795574
+  * Overwrite lintian warning vcs-field-uses-insecure-uri.
+  * Correctly remove jquery.js file.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Thu, 03 Aug 2017 11:01:09 +0200
+
+libphysfs (2.0.3-5) unstable; urgency=low
+
+  * Add patch 02-zip-seek to fix a buffer overflow in physfs with zlib version
+    >= 1.2.11.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Mon, 03 Apr 2017 19:48:04 +0200
+
+libphysfs (2.0.3-4) unstable; urgency=medium
+
+  * Enable full hardening.
+  * Use secure Vcs-Browser URL.
+  * Bump Standards-Version to 3.9.8 (no changes required).
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Fri, 23 Dec 2016 09:24:38 +0100
+
+libphysfs (2.0.3-3) unstable; urgency=medium
+
+  [ Evgeni Golov ]
+  * Correct Vcs-* URLs to point to anonscm.debian.org
+
+  [ Patrick Matthäi ]
+  * Don't explicitly request xz compression - dpkg 1.17 does this by default.
+  * Bump Standards-Version to 3.9.6 (no changes needed).
+  * Remove deprecated hardening-wrapper.
+  * Update to DEP5 debian/copyright format.
+  * Fix lintian warning static-library-has-unneeded-section.
+  * Overwrite lintian warning debian-watch-may-check-gpg-signature, since there
+    are no signatures available
+  * Remove unused lintian overrides.
+  * Link and depend against system libjs-jquery version.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Wed, 05 Aug 2015 19:39:51 +0200
+
+libphysfs (2.0.3-2) unstable; urgency=low
+
+  * Adopt debian/watch from Bart Martens.
+  * Uploading to unstable.
+  * Migrate package to minimal debhelper.
+  * Remove unused lintian overrides.
+  * Adjust Vcs-Browser debian/control field.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Mon, 06 May 2013 11:34:54 +0200
+
+libphysfs (2.0.3-1) experimental; urgency=low
+
+  * New upstream release.
+    Closes: #691867
+    - Remove merged patch remove_unused_variable.
+    - Rename patch do_not_link_against_curses to 01-do-not-link-against-curses
+      and also rewrite it.
+  * Bump Standards-Version to 3.9.4 (no changes needed).
+  * Switch to xz compression and add a Pre-Depends on dpkg.
+  * Update debian/watch: Releases are now bzip2 compressed.
+  * Remove old libphysfs-1.0.so.0 compatibility symlink.
+  * Use wildcards in lintian overrides.
+  * Overwrite duplicate-files and no-symbols-control-file lintian warnings.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Mon, 12 Nov 2012 19:39:55 +0100
+
+libphysfs (2.0.2-7) unstable; urgency=low
+
+  * Wrap all debian/control fields.
+  * Add multiarch support.
+    Closes: #680607
+  * Add lintian overrides for false positive hardening-no-fortify-functions
+    warnings.
+  * Drop unused debian/libphysfs1.symbols file.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Thu, 12 Jul 2012 21:13:51 +0200
+
+libphysfs (2.0.2-6) unstable; urgency=low
+
+  * Bump Standards-Version to 3.9.3 (no changes needed).
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Fri, 24 Feb 2012 19:24:57 +0100
+
+libphysfs (2.0.2-5) unstable; urgency=high
+
+  * Do not remove the .pc directory in the clean target.
+    Closes: #647492
+  * Apply patch from Sven Joachim, to not unnecessarily link against ncurses.
+    Closes: #646146
+  * Wrap all control fields.
+  * Add missing patch description to remove_unused_variable.diff.
+  * Add missing build-arch and build-indep target.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sat, 05 Nov 2011 11:52:22 +0100
+
+libphysfs (2.0.2-4) unstable; urgency=low
+
+  * Team upload.
+  * Drop an unsued variable from archivers/wad.c that caused an FTBFS by
+    remove_unused_variable.diff. (Closes: #634415)
+
+ -- Bruno "Fuddl" Kleinert <fuddl@debian.org>  Tue, 19 Jul 2011 17:40:27 +0200
+
+libphysfs (2.0.2-3) unstable; urgency=low
+
+  * Rebuild package. It looks like the building hardware was just damaged.
+    Closes: #624800
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Wed, 04 May 2011 22:39:43 +0200
+
+libphysfs (2.0.2-2) unstable; urgency=low
+
+  * Bump Standards-Version to 3.9.2 (no changes needed).
+  * Wrap build dependencies.
+  * Build with enabled hardening-wrapper.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sat, 30 Apr 2011 20:31:44 +0200
+
+libphysfs (2.0.2-1) unstable; urgency=low
+
+  * New upstream release.
+    - Remove merged 01-fix-gcc4.4-building patch.
+  * Bump Standards-Version to 3.9.1.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sat, 19 Feb 2011 10:38:24 +0100
+
+libphysfs (2.0.1-2) unstable; urgency=low
+
+  * Fix link from libphysfs-1.0.so.0 to libphysfs.so.2.0.1.
+    Closes: #586248
+  * Bump Standards-Version to 3.9.0 (no changes needed).
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sun, 11 Jul 2010 15:11:49 +0200
+
+libphysfs (2.0.1-1) unstable; urgency=low
+
+  * New upstream release.
+    - Drop all patches, they have been merged by upstream.
+    - physfs does not fail anymore with a bogus $HOME.
+      Closes: #553174
+    - Properly initialize on kfreebsd-*.
+      Closes: #544356
+  * Add 01-fix-gcc4.4-building.diff from upstream, so that physfs can be build
+    with gcc 4.4, thanks.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Thu, 25 Mar 2010 21:30:58 +0100
+
+libphysfs (2.0.0-5) unstable; urgency=high
+
+  * Bump Standards-Version to 3.8.4 (no changes needed).
+  * Drop quilt build depedencie.
+  * Only install properly builded manpages. There is something wrong with the
+    doxygen markup.
+    Closes: #573658
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sun, 14 Mar 2010 14:45:17 +0100
+
+libphysfs (2.0.0-4) unstable; urgency=low
+
+  [ Gonéri Le Bouder ]
+  * Fix 03_gcc4.4-ftbfs.diff, so it tries to overwrite buffer with uninitialised
+    data.
+    Closes: #527208
+  * Bump Standards-Version to 3.8.3.
+
+  [ Patrick Matthäi ]
+  * Fix debian/changelog.
+  * Replace libreadline5-dev build dependency by libreadline-dev.
+    Closes: #553799
+  * Convert package to the 3.0 (quilt) format.
+  * Rediff hunky 01_manpages.diff patch.
+  * Bump to debhelper compat 7.
+    - Use dh_prep instead of dh_clean -k.
+  * Override some lintian pendantic warnings.
+  * Remove not used dh_installexamples.
+  * Add an simple manpage for test_physfs.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sun, 15 Nov 2009 14:13:28 +0100
+
+libphysfs (2.0.0-3) unstable; urgency=low
+
+  * Change my email address.
+  * Add 03_gcc4.4-ftbfs.diff patch from upstream, which fixes a FTBFS with
+    gcc 4.4.
+    Closes: #525750
+  * Add experimental 02_fix-hurd-ftbfs.diff patch, which should fix FTBFS
+    on hurd.
+    Closes: #493916
+  * Move libphysfs1-dbg to section debug. This fixes a lintian warning.
+  * Bump Standards-Version to 3.8.2 (no changes needed).
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Thu, 18 Jun 2009 08:18:33 +0200
+
+libphysfs (2.0.0-2) unstable; urgency=low
+
+  [ Barry deFreese ]
+  * Upload new upstream to unstable.
+    + New binaries for testing physfs added to -dev package.
+  * Add Provides, Conflicts, and Replaces for libphysfs-1.0-0.
+    + ABI compatible with previous version so symlink libphysfs-1.0-0
+      to the new library.
+  * Drop 02_soname.patch, no longer needed.
+
+ -- Barry deFreese <bdefreese@debian.org>  Mon, 23 Mar 2009 11:52:31 -0400
+
+libphysfs (2.0.0-1) experimental; urgency=low
+
+  [ Barry deFreese ]
+  * New upstream release.
+  * Bump Standards Version to 3.8.1. (No changes needed).
+
+ -- Barry deFreese <bdefreese@debian.org>  Mon, 23 Mar 2009 10:26:34 -0400
+
+libphysfs (1.1.1-1) experimental; urgency=low
+
+  [ Patrick Matthäi ]
+  * Add missing ${misc:Depends}. Thanks lintian.
+
+  [ Barry deFreese ]
+  * New upstream release.
+  * Rename binary for SONAME bump.
+  * Fix symbols file. (Thanks to Paul Wise).
+  * Don't install bogus manpage links.
+  * Remove duplicated sections from binary packages.
+  * Add description to quilt patch.
+
+ -- Barry deFreese <bdefreese@debian.org>  Sun, 01 Mar 2009 18:05:01 -0500
+
+libphysfs (1.0.1-3) unstable; urgency=low
+
+  [ Barry deFreese ]
+  * 02_soname.diff - Fix *_AGE in configure and configure.in.
+  * Rename binary package to 1.0-0 instead of 1.0-1.
+  * Remove old unnecessary Conflicts and Replaces.
+
+ -- Barry deFreese <bdefreese@debian.org>  Sat, 07 Mar 2009 21:43:12 -0500
+
+libphysfs (1.0.1-2) unstable; urgency=low
+
+  [ Patrick Matthäi ]
+  * Add missing ${misc:Depends}. Thanks lintian.
+
+  [ Barry deFreese ]
+  * Don't install bogus manpage links.
+  * Remove duplicated sections from binary packages.
+  * Add description to quilt patch.
+
+ -- Barry deFreese <bdefreese@debian.org>  Sun, 01 Mar 2009 18:05:01 -0500
+
+libphysfs (1.0.1-1) experimental; urgency=low
+
+  [ Barry deFreese ]
+  * New maintainer.
+    + Acknowledged by previous maintainer.
+    + Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+    + Add myself to uploaders.
+  * New upstream release.
+    + Bump package name to match new soname.
+  * Fix description on -dev package. (Closes: #416614).
+  * Move Homepage from package description to source header.
+  * Make binNMU safe.
+  * Make clean not ignore errors.
+  * Remove un-needed dirs files.
+  * Remove unnecessary build-dep on automake1.7.
+  * Add quilt patching system.
+    + 01_manpages.diff - Fix generated manpages.
+  * Add sed script in rules to fix manpage whatis entry.
+  * Add VCS tags.
+  * Fix up watch file.
+  * Re-enable readline support in rules.
+    + Add build-dep on libreadline5-dev.
+  * Bump debhelper build-dep and compat to 5.
+  * Bump Standards Version to 3.7.3. (No changes needed).
+
+  [ Patrick Matthäi ]
+  * Provide debugging symbols in a separate package.
+    Closes: #488468
+  * Change short description to a simillar one as the libguichan binary package
+    itself with a note, that it contains the development headers.
+    Closes: #416614
+  * Bump Standards-Version to 3.8.0 (no changes needed).
+  * Add myself to uploaders.
+  * Minor debian/rules cleanups.
+  * Added .symbols file for the library.
+  * Do not build by default with the verbose option to reduce the size of the
+    build log.
+
+ -- Barry deFreese <bdefreese@debian.org>  Sat, 29 Nov 2008 10:45:08 -0500
+
+libphysfs (1.0.0-5) unstable; urgency=high
+
+  * Urgency high due to security fix on most architectures (Closes: #318091)
+  * Added explicit version of zlib1g-dev as a build dependecy.
+  * Bumped Standards-Version to 3.6.2 (no changes needed)
+
+ -- Bartosz Fenski <fenio@debian.org>  Wed, 13 Jul 2005 15:53:33 +0200
+
+libphysfs (1.0.0-4) unstable; urgency=low
+
+  * Fixed wrong build dependencies (Closes: #304438)
+    Thanks to Andreas Jochens for spotting this.
+
+ -- Bartosz Fenski <fenio@debian.org>  Wed, 13 Apr 2005 09:45:33 +0200
+
+libphysfs (1.0.0-3) unstable; urgency=low
+
+  * Updated libtool and autoconf stuff. (Closes: #304298)
+  * s/fenio@o2.pl/fenio@debian.org/
+  * Removed Scott James Remnant from Uploaders, many thanks for all uploads
+    and useful hints.
+
+ -- Bartosz Fenski <fenio@debian.org>  Tue, 12 Apr 2005 10:11:32 +0200
+
+libphysfs (1.0.0-2) unstable; urgency=low
+
+  * Setting proper conflicting values.
+
+ -- Bartosz Fenski <fenio@o2.pl>  Fri,  9 Jul 2004 22:25:15 +0200
+
+libphysfs (1.0.0-1) unstable; urgency=low
+
+  * New package because of SONAME change (Closes: #253845)
+
+ -- Bartosz Fenski <fenio@o2.pl>  Sun, 13 Jun 2004 00:17:12 +0200
+
+libphysfs0 (1.0.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - added Homepage to description.
+    - added autotools-dev to Build-Depends:
+    - added Section header for source
+    - moved Section for -dev package to libdevel
+  * debian/rules:
+    - added --disable-readline to configure target. (Closes: #249195)
+      This hopefully should fix FTBFS of libparagui on s390.
+    - removed unused variables
+    - many minor fixes
+  * debian/shlibs.local has been removed
+  * Added debian/watch file.
+
+ -- Bartosz Fenski <fenio@o2.pl>  Mon,  7 Jun 2004 20:59:12 +0200
+
+libphysfs0 (0.1.9-1) unstable; urgency=low
+
+  * Initial Release. (Closes: #215778)
+
+ -- Bartosz Fenski <fenio@o2.pl>  Thu, 16 Oct 2003 21:28:21 +0200

@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all reproducible=+fixfilepath
+
+DEB_HOST_MULTIARCH     ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+EXTRAFLAGS := -DLIB_SUFFIX="/$(DEB_HOST_MULTIARCH)"
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(EXTRAFLAGS)
+
+override_dh_install:
+	dh_install
+	strip --strip-all --remove-section=.note --remove-section=.comment \
+		$(CURDIR)/debian/libphysfs-dev/usr/lib/$(DEB_HOST_MULTIARCH)/libphysfs.a

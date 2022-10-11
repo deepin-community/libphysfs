@@ -1,0 +1,3 @@
+libphysfs source: debian-watch-does-not-check-gpg-signature
+libphysfs source: upstream-metadata-file-is-missing
+libphysfs source: maintainer-manual-page debian/test_physfs.1

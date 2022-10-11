@@ -1,0 +1,39 @@
+Source: libphysfs
+Section: libs
+Priority: optional
+Maintainer: Patrick Matthäi <pmatthaei@debian.org>
+Build-Depends: debhelper-compat (= 13),
+ cmake,
+ zlib1g-dev,
+ libncurses5-dev,
+ libreadline-dev
+Standards-Version: 4.5.1
+Rules-Requires-Root: no
+Homepage: https://www.icculus.org/physfs/
+
+Package: libphysfs-dev
+Section: libdevel
+Architecture: any
+Depends: ${shlibs:Depends},
+ ${misc:Depends},
+ libphysfs1 (= ${binary:Version})
+Description: filesystem abstraction library for game programmers (development headers)
+ The PhysicsFS filesystem abstraction library provides a simple C
+ interface to aid game programmers in utilizing game assets packaged in
+ many different types of archive files.
+ .
+ This package contains the development libraries and headers.
+
+Package: libphysfs1
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends},
+ ${misc:Depends}
+Provides: libphysfs-1.0-0
+Conflicts: libphysfs-1.0-0
+Replaces: libphysfs-1.0-0
+Multi-Arch: same
+Description: filesystem abstraction library for game programmers
+ The PhysicsFS filesystem abstraction library provides a simple C
+ interface to aid game programmers in utilizing game assets packaged in
+ many different types of archive files.

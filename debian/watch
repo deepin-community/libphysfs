@@ -1,0 +1,2 @@
+version=4
+https://www.icculus.org/physfs/downloads/physfs-(\d.*)\.(?:tgz|tbz2|txz|tar\.(?:gz|bz2|xz))
